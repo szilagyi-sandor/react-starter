@@ -1,11 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log('App rerendered');
-  });
 
   return (
     <div id="app">
