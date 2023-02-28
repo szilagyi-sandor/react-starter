@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, PropsWithChildren, ReactNode } from 'react';
+import { ErrorProvider } from './ErrorContext';
 
 type Props = {
   fallback?: ReactNode | undefined;
@@ -7,6 +8,7 @@ type Props = {
 
 type State = {
   hasError: boolean;
+  error?: Error;
 };
 
 export default class ErrorBoundary extends Component<
@@ -18,9 +20,8 @@ export default class ErrorBoundary extends Component<
     this.state = { hasError: false };
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   static getDerivedStateFromError(error: Error) {
-    return { hasError: true };
+    return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -32,11 +33,13 @@ export default class ErrorBoundary extends Component<
   }
 
   render() {
-    const { hasError } = this.state;
+    const { hasError, error } = this.state;
     const { children, fallback } = this.props;
 
     if (hasError) {
-      return fallback !== undefined ? fallback : null;
+      return fallback !== undefined ? (
+        <ErrorProvider value={error}>{fallback}</ErrorProvider>
+      ) : null;
     }
 
     return children;
