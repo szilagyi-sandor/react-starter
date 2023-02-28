@@ -1,6 +1,8 @@
-import { getErrorInfo } from '../shared/error/getErrorInfo';
-import { useErrorContext } from '../shared/error/ErrorContext';
-import { convertToCustomError } from '../shared/error/convertToCustomError';
+import {
+  getErrorInfo,
+  useErrorContext,
+  convertToCustomError,
+} from '../shared/error';
 
 function ErrorPage() {
   const error = useErrorContext();

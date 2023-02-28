@@ -11,10 +11,7 @@ type State = {
   error?: Error;
 };
 
-export default class ErrorBoundary extends Component<
-  PropsWithChildren<Props>,
-  State
-> {
+export class ErrorBoundary extends Component<PropsWithChildren<Props>, State> {
   constructor(props: PropsWithChildren<Props>) {
     super(props);
     this.state = { hasError: false };
