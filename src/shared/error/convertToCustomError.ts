@@ -1,17 +1,10 @@
-import { CustomError } from './domain';
+import { CustomError, customErrorCauseSchema } from './domain';
 
-// TODO: use zod
 export const convertToCustomError = (error: Error): CustomError => {
-  if (
-    error.cause &&
-    typeof error.cause === 'object' &&
-    typeof (error as CustomError).cause?.errorCode === 'number'
-  ) {
-    return error as CustomError;
-  }
+  const parsedCause = customErrorCauseSchema.safeParse(error.cause);
 
   return {
     ...error,
-    cause: undefined,
+    cause: parsedCause.success ? parsedCause.data : undefined,
   };
 };
