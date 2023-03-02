@@ -15,6 +15,10 @@ export default defineConfig({
     tsconfigPaths(),
     checker({
       typescript: true,
+      eslint: {
+        lintCommand:
+          'eslint --cache --cache-location ./node_modules/.cache/eslint src',
+      },
     }),
   ],
 });
