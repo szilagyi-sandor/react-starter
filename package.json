@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "immer": "^9.0.19",
+    "install": "^0.13.0",
+    "npm": "^9.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
     "zod": "^3.20.6"
   },
   "devDependencies": {
