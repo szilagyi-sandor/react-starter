@@ -1,9 +1,13 @@
-import { AppRoutes } from '@features/routing';
+import { Suspense } from 'react';
+import { router } from '@features/routing';
+import { RouterProvider } from 'react-router-dom';
 
 function App() {
   return (
     <div id="app">
-      <AppRoutes />
+      <Suspense fallback={<>Loading...</>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
   );
 }

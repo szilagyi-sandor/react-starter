@@ -1,7 +1,11 @@
 import { routes } from '@features/routing';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
+
+import classes from './layout.module.css';
 
 function Layout() {
+  const { pathname } = useLocation();
+
   return (
     <section>
       <header>
@@ -18,8 +22,12 @@ function Layout() {
       </header>
 
       <main>
-        <Outlet />
+        <div className={classes.animation} key={pathname}>
+          <Outlet />
+        </div>
       </main>
+
+      <ScrollRestoration />
     </section>
   );
 }

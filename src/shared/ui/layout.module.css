@@ -1,0 +1,14 @@
+.animation {
+  animation-duration: 320ms;
+  animation-name: pagingAnimation;
+  animation-timing-function: linear;
+}
+
+@keyframes pagingAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
