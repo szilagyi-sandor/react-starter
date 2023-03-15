@@ -17,10 +17,10 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
+      "@pages": ["src/pages"],
       "@assets/*": ["src/assets/*"],
-      "@features/*": ["src/features/*"],
-      "@pages/*": ["src/pages/*"],
-      "@shared/*": ["src/shared/*"]
+      "@shared/*": ["src/shared/*"],
+      "@features/*": ["src/features/*"]
     }
   },
 
