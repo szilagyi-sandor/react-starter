@@ -15,6 +15,9 @@ export default defineConfig({
     tsconfigPaths(),
     checker({
       typescript: true,
+      overlay: {
+        initialIsOpen: false,
+      },
       eslint: {
         lintCommand:
           'eslint --cache --cache-location ./node_modules/.cache/eslint src',
