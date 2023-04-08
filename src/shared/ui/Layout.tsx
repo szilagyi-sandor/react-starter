@@ -1,9 +1,10 @@
-import { Link, Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
+import { PropsWithChildren } from 'react';
+import { Link, ScrollRestoration, useLocation } from 'react-router-dom';
 import { routes } from '../constants';
 
 import classes from './layout.module.css';
 
-function Layout() {
+function Layout({ children }: PropsWithChildren) {
   const { pathname } = useLocation();
 
   return (
@@ -23,7 +24,7 @@ function Layout() {
 
       <main>
         <div className={classes.animation} key={pathname}>
-          <Outlet />
+          {children}
         </div>
       </main>
 
