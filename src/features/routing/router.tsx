@@ -1,8 +1,8 @@
-import { Layout } from '@shared/ui/Layout';
 import { createBrowserRouter } from 'react-router-dom';
+import { Layout } from '@shared/ui';
+import { routes } from '@shared/constants';
 import { notFoundError, ErrorProvider } from '@shared/error';
 import { ErrorPage, LazyHomePage, LazySandboxPage } from '@pages';
-import { routes } from './routes';
 
 export const router = createBrowserRouter([
   {

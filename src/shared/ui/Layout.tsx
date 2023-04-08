@@ -1,5 +1,5 @@
-import { routes } from '@features/routing';
 import { Link, Outlet, ScrollRestoration, useLocation } from 'react-router-dom';
+import { routes } from '../constants';
 
 import classes from './layout.module.css';
 
