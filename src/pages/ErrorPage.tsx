@@ -2,7 +2,7 @@ import {
   getErrorInfo,
   useErrorContext,
   convertToCustomError,
-} from '../shared/error';
+} from '@shared/error';
 
 function ErrorPage() {
   const error = useErrorContext();

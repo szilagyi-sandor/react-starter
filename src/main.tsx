@@ -1,8 +1,8 @@
 import React from 'react';
 import { ErrorPage } from '@pages';
+import { ErrorBoundary } from '@shared/error';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
-import { ErrorBoundary } from './shared/error';
 
 const mockType = import.meta.env.VITE_MOCK_TYPE;
 
